@@ -1,0 +1,218 @@
+body {
+  margin: 0;
+  font-family: "Work Sans", sans-serif;
+  background-color: rgba(90, 70, 53, 0.5);
+}
+
+a {
+  color: #000;
+}
+
+/* header */
+
+.header {
+  background-color: whitesmoke;
+  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.5);
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+}
+
+.header ul {
+  margin: 0;
+  padding: 9px;
+  list-style: none;
+  overflow: hidden;
+}
+
+.header li a {
+  display: block;
+  padding: 20px 20px;
+  text-decoration: none;
+}
+
+.header li a:hover,
+.header .menu-btn:hover {
+  background-color: rgba(90, 70, 53, 0.5);
+}
+
+.header .logo {
+  display: block;
+  float: left;
+  font-size: 2em;
+  padding: 10px 20px;
+  text-decoration: none;
+  width: 15%;
+}
+
+/* menu */
+
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+}
+
+/* menu icon */
+
+.header .menu-icon {
+  cursor: pointer;
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .nav-icon {
+  background: rgba(90, 70, 53, 0.5);
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background 0.2s ease-out;
+  width: 18px;
+}
+
+.header .menu-icon .nav-icon:before,
+.header .menu-icon .nav-icon:after {
+  background: rgba(90, 70, 53, 0.5);
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .nav-icon:before {
+  top: 5px;
+}
+
+.header .menu-icon .nav-icon:after {
+  top: -5px;
+}
+
+/* menu btn */
+
+.header .menu-btn {
+  display: none;
+  background-color: rgba(90, 70, 53, 0.5);
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon:before {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon:after {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+/* 48em = 768px @ 16pt font */
+
+@media (min-width: 48em) {
+  .header li {
+    float: left;
+  }
+  .header li a {
+    padding: 20px 30px;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+}
+
+.content {
+  height: 100vh;
+  background-image: url(/IMG/CofeeBeens.jpg);
+  background-size: cover;
+  display: grid;
+  place-items: center;
+  padding: 15px;
+}
+
+/* kontakt meg skjema begynner her */
+
+.contact-box {
+  max-width: 1000px;
+  justify-content: center;
+  margin-top: 50px;
+  align-items: center;
+  text-align: center;
+  background-color: #fff;
+  opacity: 80%;
+  box-shadow: 0px 0px 19px 5px rgba(90, 70, 53, 0.5);
+  border-radius: 7px;
+}
+
+.contact-text {
+  padding: 25px 40px;
+  margin-right: 2rem;
+}
+
+h2 {
+  color: rgba(90, 70, 53);
+}
+
+.field {
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: rgba(239, 224, 202, 0.9);
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  margin-bottom: 22px;
+  transition: 0.3s;
+}
+
+.field:hover {
+  background-color: rgba(239, 224, 202, 0.5);
+}
+
+textarea {
+  min-height: 150px;
+  font-family: "Work Sans", sans-serif;
+}
+
+.field:focus {
+  border: 2px solid rgba(58, 69, 64, 0.65);
+  background-color: #fff;
+}
+
+/* buttons begynner her */
+
+.button {
+  width: 105%;
+  font-size: 1.15rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 7px;
+  padding: 0.5em 1.75em;
+  color: white;
+  background-color: rgba(90, 70, 53, 0.65);
+  border: none;
+}
+
+@media (min-width: 0rem) {
+  .button {
+    font-size: 1.5rem;
+  }
+}
+
+.button:hover {
+  background-color: rgba(90, 70, 53);
+  color: white;
+}
